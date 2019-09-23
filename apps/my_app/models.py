@@ -20,7 +20,7 @@ class User(models.Model):
     name = models.CharField(max_length=255)
     email = models.CharField(max_length=255, unique=True, error_messages={'unique': 'An account with this email exist.'})
     password = models.CharField(max_length=255)
-    actived=models.BooleanField(default=False)
+    active=models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
     objects = UserManager()  
@@ -35,3 +35,11 @@ class Admin(models.Model):
     objects = UserManager()  
 
 
+class Record(models.Model):
+    name=models.CharField(max_length=255)
+    acount=models.CharField(max_length=255)
+    pos=models.FloatField()
+    neg=models.FloatField()
+    user = models.ForeignKey(User, related_name="records")
+    created_at = models.DateTimeField(auto_now_add = True)
+    updated_at = models.DateTimeField(auto_now = True)

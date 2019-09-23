@@ -60,12 +60,12 @@ def login(request):
 
 def admin(request):
     context={}
-    if User.objects.filter(actived=False).exists():
-            unacitvated=User.objects.filter(actived=False)
+    if User.objects.filter(active=False).exists():
+            unacitvated=User.objects.filter(active=False)
         
         
-    if User.objects.filter(actived=True).exists():        
-        acitvated=User.objects.filter(actived=True)
+    if User.objects.filter(active=True).exists():        
+        acitvated=User.objects.filter(active=True)
         
 
     context={
