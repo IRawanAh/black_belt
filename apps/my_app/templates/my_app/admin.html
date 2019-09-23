@@ -1,0 +1,40 @@
+<html>
+    <h1>Unctivated user</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+     
+
+        {% for user in unacitvated %}
+        <tr>
+            <td>{{ user.id}}</td>
+            <td>{{ user.name}}</td>
+            <td>{{ user.email}}</td>
+            <td><a href="/activate/{{user.id}}">Activate</a></td>
+        </tr>
+        {% endfor%}
+    </table>
+    <h1>Activated user</h1>
+    <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+         
+   
+            {% for user in acitvated %}
+            <tr>
+                <td>{{ user.id}}</td>
+                <td>{{ user.name}}</td>
+                <td>{{ user.email}}</td>
+                <td><a href="/deactivate/{{user.id}}">Unactivate</a></td>
+            </tr>
+            {% endfor%}
+        </table>
+</html>

@@ -1,0 +1,21 @@
+<html>
+    <h1>Register</h1>
+    <h3 style="color: red">{{msg}}</h3>
+    <form action="/" method="POST">
+        {% csrf_token %} 
+        <label>name</label><input name="name"/>
+        <label>email</label><input name="email"/>
+        <label>password</label><input name="password"/>
+        <button type="submit">Register</button>
+    </form>
+    {% for user in users %}
+    <li>Hiiii {{ user.name}} </li>
+    {% endfor%}
+    <h1>Login</h1>
+    <form action="/login" method="POST">
+        {% csrf_token %} 
+        <label>email</label><input name="email"/>
+        <label>password</label><input name="password"/>
+        <button type="submit">login</button>
+    </form>
+</html>
